@@ -1,0 +1,38 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+
+	<title>Letters To Celestia</title>
+
+	<script type="text/javascript" src="/lib/phaser/phaser.js"></script>
+    <script type="text/javascript" src="/src/Boot.js"></script>
+    <script type="text/javascript" src="/src/PhaserLogo.js"></script>
+    <script type="text/javascript" src="/src/Load.js"></script>
+    <script type="text/javascript" src="/src/Menu.js"></script>
+    <script type="text/javascript" src="/src/Game.js"></script>
+    <script type="text/javascript" src="/src/Win.js"></script>
+    <script type="text/javascript" src="/src/Credits.js"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body topmargin="0" leftmargin="0">
+    <div id="gameDiv"></div>
+
+    <script type="text/javascript">
+        var game = new Phaser.Game(848, 480, Phaser.AUTO, 'gameDiv');
+
+        game.state.add('boot', LettersToCelestia.BootState);
+        game.state.add('phaserLogo', LettersToCelestia.PhaserLogoState);
+        game.state.add('load', LettersToCelestia.LoadState);
+        game.state.add('menu', LettersToCelestia.MenuState);
+        game.state.add('credits', LettersToCelestia.CreditsState);
+
+        game.state.start('boot');
+    </script>
+</body>
+</html>
