@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="UTF-8" />
 
-	<title>Letters To Celestia</title>
+	<title>Fallout Equestria: Tall Tales</title>
 
 	<script type="text/javascript" src="/lib/phaser/phaser.js"></script>
     <script type="text/javascript" src="/src/Boot.js"></script>
@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/src/Game.js"></script>
     <script type="text/javascript" src="/src/Win.js"></script>
     <script type="text/javascript" src="/src/Credits.js"></script>
+    <script type="text/javascript" src="/src/GUI_Creator.js"></script>
 
     <style type="text/css">
         body {
@@ -26,11 +27,11 @@
     <script type="text/javascript">
         var game = new Phaser.Game(848, 480, Phaser.AUTO, 'gameDiv');
 
-        game.state.add('boot', LettersToCelestia.BootState);
-        game.state.add('phaserLogo', LettersToCelestia.PhaserLogoState);
-        game.state.add('load', LettersToCelestia.LoadState);
-        game.state.add('menu', LettersToCelestia.MenuState);
-        game.state.add('credits', LettersToCelestia.CreditsState);
+        game.state.add('boot', FOE_TallTales.BootState);
+        game.state.add('phaserLogo', FOE_TallTales.PhaserLogoState);
+        game.state.add('load', FOE_TallTales.LoadState);
+        game.state.add('menu', FOE_TallTales.MenuState);
+        game.state.add('credits', FOE_TallTales.CreditsState);
 
         game.state.start('boot');
     </script>

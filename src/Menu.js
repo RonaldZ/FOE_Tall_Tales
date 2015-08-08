@@ -1,21 +1,14 @@
-LettersToCelestia.MenuState = function(game) {
+FOE_TallTales.MenuState = function(game) {
 	this.music = null;
+
+	this.menuHeader = null;
+	this.menuBody = null;
 	this.creditsButton = null;
 };
 
-LettersToCelestia.MenuState.prototype = {
+FOE_TallTales.MenuState.prototype = {
 
 	create: function(){
-
-		//this.creditsButton = this.add.button(400, 600, 'creditsButton', this.startGame, this);
+		this.menuHeader = this.game.plugin.createLargeFrame(10);
 	},
-
-	start: function(){
-		
-	},
-
-	startCredits: function(){
-		this.music.stop();
-		this.state.start('credits');
-	}
 };

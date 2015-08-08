@@ -1,9 +1,9 @@
-LettersToCelestia.CreditsState = function(game) {
+FOE_TallTales.CreditsState = function(game) {
 	var credits = null
 	var exitKey = null;
 };
 
-LettersToCelestia.CreditsState.prototype = {
+FOE_TallTales.CreditsState.prototype = {
 	create: function(){
 		this.music = this.add.audio('title_music');
 		this.music.loop = true;

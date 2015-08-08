@@ -1,11 +1,11 @@
-LettersToCelestia.LoadState = function(game){
+FOE_TallTales.LoadState = function(game){
 
 	this.background = null;
 	this.loadbar = null;
 
 };
 
-LettersToCelestia.LoadState.prototype = {
+FOE_TallTales.LoadState.prototype = {
 
 	preload: function(){
 		var loadbar_posX = (this.game.width / 2) - (this.cache.getImage('load_bar').width / 2);
@@ -14,7 +14,11 @@ LettersToCelestia.LoadState.prototype = {
 		this.loadbar = this.add.sprite(loadbar_posX, loadbar_posY, 'load_bar');
 		this.load.setPreloadSprite(this.loadbar);
 
-		this.load.audio('title_music', '/assets/audio/title_music.mp3')
+		//Load GUI Assets
+		this.game.plugin.loadGuiAssets();
+
+		//load credits music
+		this.load.audio('credits_music', '/assets/audio/credits_music.mp3')
 	},
 
 	create: function(){
@@ -22,7 +26,7 @@ LettersToCelestia.LoadState.prototype = {
 	},
 
 	update: function(){
-		if(this.cache.isSoundDecoded('title_music')){
+		if(this.cache.isSoundDecoded('credits_music')){
 			this.state.start('menu');
 		}
 	}

@@ -1,15 +1,15 @@
-LettersToCelestia.PhaserLogoState = function(game) {
+FOE_TallTales.PhaserLogoState = function(game) {
 	var phaser_logo = null;
 	var time_check = null;
 };
 
-LettersToCelestia.PhaserLogoState.prototype = {
+FOE_TallTales.PhaserLogoState.prototype = {
 
 	preload: function(){
 		this.load.image('phaser_logo', '/lib/phaser/phaser-logo-small.png');
 
-		//TODO: load in Letters_to_Celestia logo.
-		this.load.image('load_bar', '/assets/load_bar.png');
+		//TODO: load in FOE Tall Tales logo.
+		this.load.image('load_bar', '/assets/textures/load_bar.png');
 	},
 
 	create: function(){
