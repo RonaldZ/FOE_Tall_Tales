@@ -9,6 +9,6 @@ FOE_TallTales.MenuState = function(game) {
 FOE_TallTales.MenuState.prototype = {
 
 	create: function(){
-		this.menuHeader = this.game.plugin.createLargeFrame(10);
+		this.menuHeader = this.game.plugin.createLargeFrame(0, 0, 10, "Fallout Equestria: Tall Tales");
 	},
 };

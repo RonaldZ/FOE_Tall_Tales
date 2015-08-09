@@ -24,18 +24,39 @@ Phaser.Plugin.GUI_Creator.prototype.loadGuiAssets = function(){
 
 };
 
-Phaser.Plugin.GUI_Creator.prototype.createLargeFrame = function(size, text){
-	var tempFrame = game.add.group();
-	var menuWidth = game.cache.getImage('LargeFrame_Middle').width;
+Phaser.Plugin.GUI_Creator.prototype.createLargeFrame = function(x, y, sizeX, text, group){
+	x = x || 0;
+	y = y || 0;
+	sizeX = sizeX || 0;
+	text = text || '';
+	group = group || null;
 
-	tempFrame.create(0,0, 'LargeFrame_Left');
+	var frame = game.add.group(group);
+	frame.x = x;
+	frame.y = y;
 
-	for(i = 0; i < size; i++){
-		tempFrame.create(menuWidth, 0, 'LargeFrame_Middle');
-		menuWidth = menuWidth + game.cache.getImage('LargeFrame_Middle').width;
+	frame.create(0,0, 'LargeFrame_Left');
+
+	for(i = 0; i < sizeX; i++){
+		frame.create(frame.width, 0, 'LargeFrame_Middle');
 	}
 
-	tempFrame.create(menuWidth, 0, 'LargeFrame_Right');
+	frame.create(frame.width, 0, 'LargeFrame_Right');
 
-	return tempFrame;
+	var tempText = game.add.text(0, 0, text, {font: '24px Arial', fill: '#fff'}, tempFrame);
+
+	tempText.x = frame.width/2 - tempText.width/2 
+	tempText.y = frame.height/2 - tempText.height/2.5
+
+	return frame;
+};
+
+Phaser.Plugin.GUI_Creator.prototype.createButton = function(x, y, sizeX, text, group){
+	x = x || 0;
+	y = y || 0;
+	sizeX = sizeX || 0;
+	text = text || 0;
+	group = group || null;
+
+	var tempButton = game
 };
