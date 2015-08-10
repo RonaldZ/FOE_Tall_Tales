@@ -9,7 +9,6 @@ FOE_TallTales.PhaserLogoState.prototype = {
 		this.load.image('phaser_logo', '/lib/phaser/phaser-logo-small.png');
 
 		//TODO: load in FOE Tall Tales logo.
-		this.load.image('load_bar', '/assets/textures/load_bar.png');
 	},
 
 	create: function(){
