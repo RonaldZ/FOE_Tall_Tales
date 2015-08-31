@@ -1,6 +1,6 @@
 FOE_TallTales.PhaserLogoState = function(game) {
-	var phaser_logo = null;
-	var time_check = null;
+	this.phaser_logo = null;
+	this.timer = null;
 };
 
 FOE_TallTales.PhaserLogoState.prototype = {
@@ -8,7 +8,6 @@ FOE_TallTales.PhaserLogoState.prototype = {
 	preload: function(){
 		this.load.image('phaser_logo', '/lib/phaser/phaser-logo-small.png');
 
-		//TODO: load in FOE Tall Tales logo.
 	},
 
 	create: function(){
@@ -17,11 +16,11 @@ FOE_TallTales.PhaserLogoState.prototype = {
 
 		this.phaser_logo = this.game.add.sprite(phaser_logo_posX, phaser_logo_posY, 'phaser_logo');
 
-		this.time_check = this.time.now;
+		this.timer = this.time.now + 3000;
 	},
 
 	update: function(){
-		if((game.time.now - this.time_check) > 3000){
+		if(this.time.now > this.timer){
 			this.state.start('load');
 		}
 	}

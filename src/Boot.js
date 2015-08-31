@@ -11,11 +11,11 @@ FOE_TallTales.BootState.prototype = {
 
 		this.stage.disableVisibilityChange = true;
 
-		this.game.plugin = this.game.plugins.add(Phaser.Plugin.GUI_Creator)
+		this.game.GUI = this.game.plugins.add(Phaser.Plugin.GUI_Creator)
 	},
 
 	preload: function(){
-
+		this.load.image('terminal_background', assets + '/textures/terminal_background.png');
 	},
 
 	create: function(){

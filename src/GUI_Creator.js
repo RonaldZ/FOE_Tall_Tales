@@ -24,6 +24,33 @@ Phaser.Plugin.GUI_Creator.prototype.loadGuiAssets = function(){
 
 };
 
+Phaser.Plugin.GUI_Creator.prototype.rectangle = function(x, y, width, height, color, lineWidth, isFilled, alpha){
+	x = x || 0;
+	y = y || 0;
+	width = width || 3;
+	height = height || 3;
+	color = color || 0xFFFFFF;
+	lineWidth = lineWidth || 1;
+	isFilled = isFilled || false;
+	alpha = alpha || 1;
+
+	var tempGraphic = game.add.graphics(x,y);
+
+	tempGraphic.lineStyle(lineWidth, color, alpha);
+
+	if(isFilled){
+		tempGraphic.beginFill(0x28F781, alpha);
+	}
+
+	tempGraphic.drawRect(0, 0, width, height);
+
+	if(isFilled){
+		tempGraphic.endFill();
+	}
+
+	return tempGraphic;
+},
+
 Phaser.Plugin.GUI_Creator.prototype.createLargeFrame = function(x, y, sizeX, text, group){
 	x = x || 0;
 	y = y || 0;
